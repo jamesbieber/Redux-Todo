@@ -1,0 +1,11 @@
+.item-complete {
+  width: 10%;
+  text-decoration: line-through;
+  background-color: red;
+}
+
+.item-incomplete {
+  width: 10%;
+  text-decoration: none;
+  background-color: white;
+}

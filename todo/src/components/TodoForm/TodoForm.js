@@ -1,8 +1,8 @@
 import React from "react";
-import Todo from "../Todo/Todo";
 import { add } from "../../actions/index";
 import { toggle } from "../../actions/index";
 import { connect } from "react-redux";
+import "./todoform.css";
 
 class TodoForm extends React.Component {
   state = {
@@ -31,8 +31,13 @@ class TodoForm extends React.Component {
       <div>
         <div className="todo-list">
           {this.props.todos.map((todo, index) => (
-            <h3 onClick={event => this.toggleTodo(event, index)} key={index}>
+            <h3
+              className={todo.completed ? "item-complete" : "item-incomplete"}
+              onClick={event => this.toggleTodo(event, index)}
+              key={index}
+            >
               {todo.value}
+              {todo.completed}
             </h3>
           ))}
         </div>
